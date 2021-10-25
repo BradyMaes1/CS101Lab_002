@@ -1,3 +1,36 @@
+########################################################################
+##
+## CS 101 Lab
+## Program #3
+## Name: Brady maes
+## Email: bpmynv@umsystem.edu
+##
+## PROBLEM : The code must create a game called Flarsheim Guesser that finds out what number the user is thinking about (from the inclusive range of 1 to 100) from the remainders
+##  when the user's number is divided by 3, 5, and 7. The game must also be within a loop that asks the user if they want to keep playing (Y or N?). If the user gives input besides
+##  'Y' or 'N' (capitalization does not matter), then the program simply just asks them if they want to keep playing again. The program then quits if the user said 'N' or 'n' or it
+##  plays another game if the user gave 'Y' or 'y'. Once the game is being played, it asks the user to think of a number between and including 1 and 100. The program then asks the
+##  user for the remainders of said number when divided by 3, 5, and 7. The program then uses a for loop from 1 to 101 (1 to 101 does not include 101 itself) to find what number 
+##  has the exact 3 same remainders and displays the result to the user. Finally, the game will ask them if they'd like to play again.
+##
+## ALGORITHM : 
+##      1. Introduce the user to the game
+##      2. Determine if to continue the game, end it, or ask the user again what to do.
+##      3. Ask the user to think of a number between 1 and 100.
+##      4. Ask the user for the remainders of dividing their number by 3, 5, and 7
+##      5. Use a loop between 1 and 101 (not including 101 itself) to find the user's number by finding the number between 1 and 100 that has the same remainders when dividing
+##         by 3, 5, and 7
+##      6. Display the number that matched the same remainders as the user's number
+##      7. Ask the user if they would like to play again and update the loop accordingly.
+##      
+## 
+## ERROR HANDLING:
+##      If the user does not give an integer for some of the inputs, a type error might occur. Additionally, the program will not work if the user does not select a number between
+##      1 and 100.
+##
+## OTHER COMMENTS:
+##      N/A
+##
+########################################################################
 gameCondition = 'Y'
 print('Welcome to the Flarsheim Guesser!')
 while gameCondition !='N' and gameCondition != 'n':
