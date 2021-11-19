@@ -9,7 +9,20 @@
     output file with a specific format (looks like a table). If the mpg paramater in the input file is invalid the program will say so and point out what vehicle the error occured on.
 
     ALGORITHIM:
-    1. Creat mpg() function to correctly ask users for their
+    1. import the csv module
+    2. Create mpg() function to ask users for an integer between 1 and 99 (inclusive) for the mpg minimum
+    3. Create primary() function that calls mpg() and sets its value equal to a variable
+    4. Write a for loop to get a valid input file from the user
+    5. Write a for loop to get a valid output file from the user
+    6. Calculate and store the vehicles that are equal to or greater to the mpg minimum to the output file
+    7. If one of the mpg values from the input is invalid, state which vehicle(s) are/is invalid and do not output to the output file
+
+    ERROR HANDLING:
+    If the user gives a file that has nothing in it or text/numbers that are entirely not intended for this program, the program may run into an error.
+
+    OTHER COMMENTS:
+    N/A
+
     '''
 import csv
 def mpg():
@@ -59,7 +72,8 @@ def primary():
                         if int(i[7]) >= minMPG:
                             l2.append(i)
                     except ValueError:
-                        print('Could not convert value', i[7], 'for vehicles', i[0], i[1], i[2])
+                        placeHolder = 'Could not convert value' + " " + str(i[7])  + " " + 'for vehicles'  + " " +  str(i[0]) + " " +  str(i[1])  + " " +  str(i[2])
+                        l2.append(placeHolder)
                 for x in l2:
                     year = x[0]
                     make = x[1]
@@ -67,6 +81,7 @@ def primary():
                     mileage = x[7]
                     print('{:<5}{:<20}{:<40}{}'.format(str(year), make, model, str(mileage)))
                     cFile.write(('{:<5}{:<20}{:<40}{}'.format(str(year), make, model, str(mileage))))
+                    cFile.write('\n')
                 x = False
 
                 
